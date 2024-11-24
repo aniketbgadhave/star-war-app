@@ -1,0 +1,235 @@
+.people {
+    height: 100%;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+    background-color: #EDF4F2;
+    color: #353935;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    min-height: 70vh;
+}
+
+.search-input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 1px solid #888;
+    font-size: 16px;
+    justify-content: center;
+}
+.search-box{
+    /* height: 45%; */
+    background-color: #7e7863;
+    padding-top:2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.filter-container {
+
+    width: 40%;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    /* gap: 20px; */
+    margin-bottom: 20px;
+  }
+  select {
+    width: 40%;
+    margin-left: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+.card {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 200px;
+    height: 250px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #F1F1F2;
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+.card:hover{
+    width: 210px;
+    height: 260px;
+    margin: 5px;
+    padding: 5px;
+    z-index: 100;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.card-content {
+    text-align: center;
+    padding:10px;
+    margin:auto
+}
+
+.modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+.modal-dialog{
+    overflow-y: initial !important
+}
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed; /* Ensure the overlay covers the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0; /* High z-index to be above all cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 250px;
+    height: 80vh;
+    border-radius: 10px;
+    z-index: 1000; /* Higher z-index for modal content */
+    display: block;
+    overflow-y: auto;
+}
+.modal-content-image {
+    width: 230px;
+    height: 10px;
+    position: relative;
+
+}
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Faded Cards */
+.card.faded {
+    opacity: 0.02;
+    pointer-events: none; /* Disable clicking on faded cards */
+    /* z-index: -1; */
+    color: hwb(0 24% 76%);
+    border: 2px solid white;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.page-item {
+    margin: 0 5px;
+    padding: 2px;
+}
+
+.page-link {
+    padding: 8px 16px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f1f1f2;
+}
+
+.page-item.active .page-link {
+    background-color: #888;
+    color: white;
+    border-color: #888;
+}
+
+.loader-text {
+    font-size: 24px;    
+    font-weight: bold;
+    color: #353935;
+
+    margin: auto;
+}
+  
+.loader-text span {
+    animation: blink 3s infinite;
+}
+  
+.loader-text span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+  
+.loader-text span:nth-child(3) {
+    animation-delay: 1s;
+}
+.loader-text span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+  
+ @keyframes blink {
+   0%,
+   100% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0;
+   }
+} 
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .search-box {
+      flex-direction: column;
+      align-items: center;
+      padding-right: 30px;
+      padding-left: 10px;
+      margin: auto;
+  }
+
+  .search-input, .filter-container, select {
+      width: 100%;
+      margin-left: 0;
+  }
+
+  select {
+      margin-top: 10px;
+  }
+  .filter-container{
+    flex-wrap: wrap;
+  }
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    list-style: none;
+    padding: 10px;
+  }
+  .page-item {
+    margin: 0 5px;
+    padding: 5px;
+  }
+}
