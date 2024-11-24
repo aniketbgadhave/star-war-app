@@ -98,7 +98,6 @@ _Show layouts for mobile, tablet, and desktop._
 
 ## Future Enhancements  
 
-- Dark mode support.  
 - Improved filtering options (e.g., multiple filters at once).  
 - Favorite/Bookmark feature for characters.  
 
